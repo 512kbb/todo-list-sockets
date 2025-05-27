@@ -1,0 +1,59 @@
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>todo list</title>
+    <style>
+      body { margin: 0; padding-bottom: 3rem; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+
+    
+      #list { list-style-type: none; margin: 0; padding: 0; }
+      #list > li { padding: 0.5rem 1rem; }
+      #list > li:nth-child(odd) { background: #efefef; }
+    </style>
+  </head>
+  <body>
+    <ul id="list"></ul>
+  </body>
+  <script src="/socket.io/socket.io.js"></script>
+<script>
+  const socket = io();
+  const todolist = document.getElementById('list');
+  socket.on('tasks', (tasks) => {
+    console.log('Tasks received:', tasks);
+    todolist.innerHTML = '';
+    tasks.forEach(task => {
+      const li = document.createElement('li');
+      li.id = task.id;
+      li.textContent = `${task.id} - ${task.titulo} - ${task.status}`;
+      todolist.appendChild(li);
+    });
+  });
+
+  socket.on('task_created', (task) => {
+    console.log('Task created:', task);
+    const li = document.createElement('li');
+    li.id = task.id;
+    li.textContent = `${task.id} - ${task.titulo} - ${task.status}`;
+    todolist.appendChild(li);
+  });
+
+  socket.on('task_updated', (task) => {
+    console.log('Task updated:', task);
+    const li = document.getElementById(task.id);
+    if (li) {
+      li.textContent = `${task.id} - ${task.titulo} - ${task.status}`;
+    }
+  });
+
+  socket.on('task_deleted', (task) => {
+    console.log('Task deleted:', task);
+    const li = document.getElementById(task.id);
+    if (li) {
+      todolist.removeChild(li);
+    }
+  });
+</script>
+</html>
