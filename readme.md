@@ -9,6 +9,10 @@ Este proyecto es una prueba técnica para el proceso de postulación en Finmarke
 ```bash
 nvm install 22.14.0
 ```
+
+```bash
+nvm use 22.14.0
+```
 ) es la version que utilice en el desarrollo
 - npm o yarn
 
