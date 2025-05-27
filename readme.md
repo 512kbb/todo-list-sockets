@@ -32,6 +32,15 @@ instalar las dependencias
 npm install
 ```
 
+## Uso
+
+para iniciar el proyecto
+```bash
+npm start
+```
+
+en el navegador abrir la instancia de [Cliente](http://localhost:3000/)
+
 ## endpoints
 usar insomnia o postman, o apliacion equivalente de preferencia
 ### GET - Obtiene las tareas
@@ -69,14 +78,7 @@ cualquier otro estado arrojara un status 400
 ```
 localhost:3000/tasks/:id
 ```
-## Uso
 
-para iniciar el proyecto
-```bash
-npm start
-```
-
-en el navegador abrir la instancia de [Cliente](http://localhost:3000/)
 
 ## Autor
 
