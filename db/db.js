@@ -13,8 +13,7 @@ function connected(err) {
   console.log('conectado a la db');
 
 }
-// const sqlite3 = require('sqlite3').verbose();
-// const db = new sqlite3.Database(':todo:')
+
 
 const sql = `CREATE TABLE IF NOT EXISTS todo_list (
           id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -33,4 +32,4 @@ db.run(sql, [], (err) => {
   console.log('tabla creada correctamente');
 })
 
-export default db; // export the database instance
+export default db; 
