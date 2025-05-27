@@ -33,11 +33,50 @@ instalar las dependencias
 npm install
 ```
 
+## endpoints
+GET - Obtiene las tareas
+```
+localhost:3000/tasks
+```
+
+POST - Crea una tarea
+
+```
+localhost:3000/tasks
+```
+recibe un json en esta estructura
+```
+{
+	"titulo": "titulo",
+	"descripcion": "descripcion"
+}
+```
+
+PUT - Actualiza el estado de una tarea
+
+```
+localhost:3000/tasks/:id
+```
+recibe un json en esta estructura
+```
+{
+    "status": "completada" o "pendiente"
+}
+```
+cualquier otro estado arrojara un status 400
+
+DELETE - Eliminar una tarea
+```
+localhost:3000/tasks/:id
+```
 ## Uso
 
+para inicial el proyecto
 ```bash
 npm start
 ```
+
+en el navegador abrir la instancia de [Cliente](http://localhost:3000/)
 
 ## Autor
 
