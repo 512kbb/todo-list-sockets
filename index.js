@@ -157,9 +157,13 @@ app.delete('/tasks/:id', (req, res) => {
   }
 })
 
-
+// websocket connection 
 io.on('connection', (socket) => {
-  console.log('a user connected');
+  /* 
+  nunca habia integrado un websocket, asi que no se si esta bien esta parte
+  encontre que era la forma sencilla de enviar datos al cliente sin tener que hacer una peticion fetch desde el html
+  */
+  console.log('usuario conectado');
   const query = 'SELECT * FROM todo_list;';
   const data = { tasks: [] }
   try {
@@ -178,8 +182,8 @@ io.on('connection', (socket) => {
       socket.emit('tasks', data.tasks);
     })
   } catch (err) {
-    console.error('Error fetching tasks:', err.message);
-    socket.emit('error', { message: 'Error fetching tasks' });
+    console.error('error al obtener las tareas:', err.message);
+    socket.emit('error', { message: 'error al obtener las tareas' });
   }
 
 

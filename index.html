@@ -7,15 +7,20 @@
     <title>todo list</title>
     <style>
       body { margin: 0; padding-bottom: 3rem; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
-
+        main { max-width: 600px; margin: 0 auto; padding: 1rem; }
     
       #list { list-style-type: none; margin: 0; padding: 0; }
       #list > li { padding: 0.5rem 1rem; }
       #list > li:nth-child(odd) { background: #efefef; }
+      .completada  { text-decoration: line-through; color: gray; }
+
     </style>
   </head>
   <body>
-    <ul id="list"></ul>
+    <main>
+        <h1>Todo List</h1>
+        <ul id="list"></ul>
+    </main>
   </body>
   <script src="/socket.io/socket.io.js"></script>
 <script>
@@ -27,6 +32,9 @@
     tasks.forEach(task => {
       const li = document.createElement('li');
       li.id = task.id;
+      if (task.status === 'completada') {
+        li.classList.add('completada');
+      }
       li.textContent = `${task.id} - ${task.titulo} - ${task.status}`;
       todolist.appendChild(li);
     });
@@ -43,6 +51,9 @@
   socket.on('task_updated', (task) => {
     console.log('Task updated:', task);
     const li = document.getElementById(task.id);
+    if (task.status === 'completada') {
+        li.classList.add('completada');
+      }
     if (li) {
       li.textContent = `${task.id} - ${task.titulo} - ${task.status}`;
     }
