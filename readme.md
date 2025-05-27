@@ -1,7 +1,6 @@
-# Prueba Postulación Finmarkets
+# Prueba Postulación
 
-Este proyecto es una prueba técnica para el proceso de postulación en Finmarkets.
-
+Este proyecto es una prueba técnica para el proceso de postulación 
 ## Requisitos
 
 - Node.js (versión recomendada: 22+)
@@ -25,7 +24,7 @@ git clone git@github.com:512kbb/todo-list-sockets.git
 
 ingresar a la carpeta
 ```bash
-cd prueba_postulacion_finmarkets
+cd todo-list-sockets
 ```
 
 instalar las dependencias
@@ -34,12 +33,13 @@ npm install
 ```
 
 ## endpoints
-GET - Obtiene las tareas
+usar insomnia o postman, o apliacion equivalente de preferencia
+### GET - Obtiene las tareas
 ```
 localhost:3000/tasks
 ```
 
-POST - Crea una tarea
+### POST - Crea una tarea
 
 ```
 localhost:3000/tasks
@@ -52,7 +52,7 @@ recibe un json en esta estructura
 }
 ```
 
-PUT - Actualiza el estado de una tarea
+### PUT - Actualiza el estado de una tarea
 
 ```
 localhost:3000/tasks/:id
@@ -65,13 +65,13 @@ recibe un json en esta estructura
 ```
 cualquier otro estado arrojara un status 400
 
-DELETE - Eliminar una tarea
+### DELETE - Eliminar una tarea
 ```
 localhost:3000/tasks/:id
 ```
 ## Uso
 
-para inicial el proyecto
+para iniciar el proyecto
 ```bash
 npm start
 ```
