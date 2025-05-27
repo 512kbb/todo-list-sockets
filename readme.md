@@ -2,20 +2,30 @@
 
 Este proyecto es una prueba técnica para el proceso de postulación en Finmarkets.
 
-## Descripción
-
-Incluye el desarrollo de funcionalidades solicitadas para evaluar conocimientos técnicos y buenas prácticas de programación.
-
 ## Requisitos
 
 - Node.js (versión recomendada: 22+)
+(si tienes nvm :
+```bash
+nvm install 22.14.0
+```
+) es la version que utilice en el desarrollo
 - npm o yarn
 
 ## Instalación
 
+clonar el repositorio
 ```bash
 git clone git@github.com:512kbb/todo-list-sockets.git
+```
+
+ingresar a la carpeta
+```bash
 cd prueba_postulacion_finmarkets
+```
+
+instalar las dependencias
+```bash
 npm install
 ```
 
@@ -24,11 +34,6 @@ npm install
 ```bash
 npm start
 ```
-
-## Estructura del Proyecto
-
-- `/src`: Código fuente principal
-- `/tests`: Pruebas unitarias
 
 ## Autor
 
